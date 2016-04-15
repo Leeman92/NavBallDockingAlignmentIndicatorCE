@@ -64,10 +64,7 @@ public class NavBallDockingAlignmentIndicator : MonoBehaviour
 			value = Mathf.Clamp01(value);
 			indicator.GetComponent<MeshRenderer>().materials[0].SetFloat("_Opacity", value);
 
-			if (Input.GetKeyDown(KeyCode.K))
-			{
-				indicator.SetActive(!indicator.activeSelf);
-			}
+			indicator.SetActive(indicator.transform.localPosition.z > 0.0d);
 		}
 	}
 
